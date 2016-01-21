@@ -1,0 +1,11 @@
+.wrapper--narrow
+	.row
+		.col-md-12
+			
+			input#title class="note-form__title" type="text" name="note[title]" value="#{@note.title}" 
+			input#body class="note-form__body" type="hidden" name="note[body]" value="#{@note.body}"
+
+			//.editable data-field-id="title" ==@note.title
+    		.editable data-field-id="body" ==@note.body
+
+			input#note-form__submit class="button hidden" type="submit" value="Save note"

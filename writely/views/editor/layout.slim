@@ -1,0 +1,51 @@
+doctype html
+html lang="en"
+    head
+    title== @title || "Notely"
+    meta charset="utf-8"
+
+    link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"
+    link rel="stylesheet" href="/stylesheets/medium-editor.css"
+    link rel="stylesheet" href="/stylesheets/medium-editor-insert-plugin.css"
+    link rel="stylesheet" href="/stylesheets/themes/bootstrap.css"
+    link rel="stylesheet" href="/stylesheets/styles.css"
+    script type="text/javascript" src="//use.typekit.net/phe7aek.js"
+    script type="text/javascript" try{Typekit.load();}catch(e){}
+
+    body.editor
+        header.header__controls.editor__controls role="navigation"
+            .container-fluid
+                nav.left
+                    ul.nav.nav-pills
+                        li
+                            button.btn.btn-default.navbar-btn type="submit"
+                                i.fa.fa-bars
+                nav.right
+                    ul.nav.nav-pills
+                        li.eta
+                        li.word-count
+                        li
+                            button.btn.btn-default.navbar-btn.right type="button" Sign out
+
+        == yield
+
+        footer.footer__controls.editor__controls role="navigation"
+            .container-fluid
+                nav.left
+                    ul.nav.nav-pills
+                        li
+                            button.btn.btn-danger.navbar-btn type="submit"
+                                i.fa.fa-trash-o Delete
+                nav.right
+                    ul.nav.nav-pills
+                        li.eta
+                        li.word-count
+                        li
+                            button#note-form__submit--trigger.btn.btn-primary.navbar-btn.right type="button" Save
+
+script type="text/javascript" src="/javascripts/jquery-1.11.2.js"
+script type="text/javascript" src="/javascripts/medium-editor.min.js"
+script type="text/javascript" src="/javascripts/medium-editor-insert-plugin.min.js"
+script type="text/javascript" src="/javascripts/medium-editor-insert-images.js"
+script type="text/javascript" src="/javascripts/jquery.readtime.min.js"
+script type="text/javascript" src="/javascripts/note-template.js"

@@ -1,0 +1,41 @@
+.master-header
+	.wrapper--narrow
+		canvas id="surface"
+		.master-header__intro
+			h1.as-header-1 Writing, made simple.
+			p.as-paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.
+
+			
+		
+
+.features
+	.features-item
+		.features-item__text
+			h3 This is a feature
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		.features-item__img
+			img src="/images/feature-iphone-01.png"
+	.features-item
+		.features-item__img
+			img src="/images/feature-iphone-01.png"
+		.features-item__text
+			h3 This is a feature
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+	.features-item
+		.features-item__text
+			h3 This is a feature
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		.features-item__img
+			img src="/images/feature-iphone-01.png"
+
+.footer
+	.wrapper--narrow
+		p
+			small
+				
+				= @notes.all.count 
+			
+				span
+					i.fa.fa-heart.icon  
+					| 
+						notes and counting.

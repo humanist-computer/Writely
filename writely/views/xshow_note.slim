@@ -1,0 +1,7 @@
+.wrapper--narrow
+	.show-note
+		= @note.title
+		= @note.body
+		form action="/notes/#{@note.id}" method="POST"
+		  input type="hidden" name="_method" value="DELETE"
+		  input type="submit" value="delete this note"

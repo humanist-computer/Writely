@@ -1,0 +1,62 @@
+.wrapper--narrow
+  section.document-list
+    //a.button--add-new href="/notes/new"
+
+    a.button.document-action--new href="#" 
+        i class="fa fa-file-text-o"   
+        | New document
+   
+    - if @user.notes.any?
+      table.table
+        -@user.notes.each do |note|
+          tr data-note-id="#{note.id}"
+            td 
+              a href="/notes/#{note.id}/edit"
+                | #{note.title}
+            td 
+              form action="/notes/#{note.id}" method="POST"
+                input type="hidden" name="_method" value="DELETE"
+                input.hidden type="submit" value="Delete note"
+            td.option
+              a.deletenote href="#"
+                i.fa.fa-trash-o
+    - else
+      p No notes have been created yet!
+
+  .modal.fade#myModal tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close type="button" data-dismiss="modal" aria-hidden="true"  
+            | x
+          h4.modal-title#myModalLabel
+            | Delete note?
+        
+        .modal-body
+          p Are you sure you want to delete the note? 
+        
+        .modal-footer
+          button.btn.btn-danger.delete-note type="button" 
+            | Delete note
+          button.btn.btn-default type="button" data-dismiss="modal"
+            | Cancel
+
+  .modal.new-note-modal.fade tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+    .modal-dialog
+      .modal-content
+        form method="POST" action="/notes/new"
+          .modal-header
+            button.close type="button" data-dismiss="modal" aria-hidden="true"  
+              | x
+            h4.modal-title#myModalLabel
+              | New note
+          
+          .modal-body
+            input#title class="note-form__title" type="text" name="note__title" placeholder="Untitled note..."  
+
+          
+          .modal-footer
+            button.btn.btn-default type="button" data-dismiss="modal"
+              | Cancel
+            button.btn.btn-primary.document-action__create-note type="submit" 
+              | Create note

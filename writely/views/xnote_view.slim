@@ -1,0 +1,26 @@
+doctype html
+html lang="en"
+  head
+    title== @title || "Notely"
+    meta charset="utf-8"
+    
+    link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"
+		link rel="stylesheet" href="/stylesheets/styles.css"
+		script type="text/javascript" src="//use.typekit.net/phe7aek.js"
+		script type="text/javascript" try{Typekit.load();}catch(e){}
+
+    
+  body
+    nav.taskbar
+    	nav.left
+    		ul.nav.nav-pills
+    			li
+    				a href="/" 
+	      				p
+	      					| Made with Notely
+
+	== yield
+
+	script type="text/javascript" src="/javascripts/jquery-1.11.0.min.js"
+  	script type="text/javascript" src="/javascripts/jquery.readtime.min.js"
+  	script type="text/javascript" src="/javascripts/note-view-template.js"

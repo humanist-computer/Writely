@@ -1,0 +1,3 @@
+form#note-form method="POST" action="/notes/#{@note.id}"
+	input type="hidden" name="_method" value="PUT"
+	== slim :"editor/note_form"

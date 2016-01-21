@@ -1,0 +1,9 @@
+h1 Notes
+
+a href="/notes/new" Create a new note
+- if @notes.any?
+  ul#notes
+    -@notes.each do |note|
+      li <a href="/notes/#{note.id}">#{note.title}</a>
+- else
+  p No notes have been created yet!

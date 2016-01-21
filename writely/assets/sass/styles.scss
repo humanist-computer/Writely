@@ -1,0 +1,353 @@
+// customize bootstrap variables here:
+@import "bootstrap";
+@import "compass";
+@import "compass/css3/box-shadow";
+@import "compass/css3/images";
+@import "compass/typography/vertical_rhythm";
+@import "variables";
+@import "mixins";
+
+#note-form{
+	@include x-rem(padding-top, 72px);
+	background: #eee;
+}
+
+.table > tbody > tr > td.option{
+	padding: 4px 0px;
+	i{
+		//display: none;
+		font-size: 14px;
+	}
+	a:hover{
+		text-decoration: none;
+	}
+
+}
+
+.table > tbody > tr > td{
+	border-top: 0;
+	padding: 8px 0px;
+}
+
+nav{
+	ul{
+		li{
+			display: inline-block;
+
+		}
+	}
+}
+
+.taskbar{
+
+	@include x-rem(padding, 0.5 20px);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 5000;
+	background: rgba(245,245,245,0.8);
+
+	p{
+		line-height: 1rem;
+		@include x-rem(font-size, 14px);
+		margin-bottom: 0;
+	}
+}
+
+.editor__controls{
+	-webkit-transition: opacity 500ms ease-out 1s;
+    -moz-transition: opacity 500ms ease-out 1s;
+    -o-transition: opacity 500ms ease-out 1s;
+    transition: opacity 500ms ease-out 1s;
+}
+
+.header__controls{
+	@extend .navbar;
+	@extend .navbar-default;
+	@extend .navbar-fixed-top;
+	@include background(image-url("foo.png"),
+                      linear-gradient(top, rgba(#eee,1), rgba(#eee,0)));
+	border: 0;
+
+}
+
+.footer__controls{
+	@extend .navbar;
+	@extend .navbar-default;
+	@extend .navbar-fixed-top;
+	bottom: 0;
+	top: initial;
+	border: 0;
+	@include background(image-url("foo.png"),
+											linear-gradient(top, rgba(#eee,0), rgba(#eee,0)));
+											margin-bottom: 0;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.hidden{
+	display: none;
+}
+
+.footer{
+	.icon{
+		margin: 0 4px;
+	}
+	p{
+		color: #8D8D8D;
+	}
+}
+
+a.button--twitter{
+	@extend .btn;
+	@extend .btn-primary;
+	@extend .btn-sm;
+	p{
+		margin: 0;
+	}
+
+	float: right;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	i {
+		margin-right: 5px;
+	}
+}
+
+a.button--add-new{
+	@extend .btn;
+	@extend .btn-default;
+	p{
+		margin: 0;
+	}
+
+	margin-top: 15px;
+	margin-bottom: 15px;
+	i {
+		margin-right: 5px;
+	}
+}
+
+#surface{
+	height: 400px;
+position: relative;
+width: 100%;
+max-width: 100%;
+}
+
+textarea, input, .editable { outline: none; }
+
+$base-font-size: 18px;
+$base-line-height: 26px;
+$round-to-nearest-half-line: true;
+$browser-default-font-size: 14px;
+$base-rhythm-unit: $base-line-height / $base-font-size * $font-unit;
+
+html{
+	@include establish-baseline;
+}
+
+html{
+	font-size: 100%;
+}
+
+img{
+	max-width: 100%;
+}
+
+// Layout
+body{
+	font-family: "open sans";
+	/*-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;*/
+    font-size: 18px;
+	line-height: 26px;
+	color: #5c5c5c;
+	font-weight: 300;
+}
+
+.wrapper{
+	@extend .container;
+}
+
+.wrapper--narrow{
+	@extend .container;
+	@include x-rem(max-width, 700px);
+}
+
+.as-paragraph{
+	z-index: 100;
+	position: relative;
+	text-align: center;
+	@include x-rem(line-height, 21px);
+	transition: color 0.5s ease;
+
+}
+
+.as-header-1{
+	z-index: 100;
+	position: relative;
+	text-align: center;
+	transition: color 0.5s ease;
+}
+
+.master-header{
+	transition: background 0.5s ease;
+	background: #f0f0f0;
+	overflow: hidden;
+}
+
+.master-header:hover{
+	background: #1A748F;
+
+	.as-paragraph{
+	color: white;
+
+}
+
+.as-header-1{
+	color: white;
+}
+
+
+}
+
+.master-header__image{
+	position: relative;
+	z-index: 0;
+	max-width: 100%;
+}
+
+.master-header__intro{
+	position: relative;
+	@include x-rem(margin-top, -208px);
+	@include x-rem(padding, 0 60px 32px);
+}
+
+.features{
+	@extend .container;
+	@include x-rem(max-width, 640px);
+}
+
+.features-item{
+	@extend .row;
+	@include x-rem(padding-top, 40px);
+	@include x-rem(padding-bottom, 40px);
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.features-item__text{
+	@extend .col-md-8;
+	p{
+		@include x-rem(line-height, 21px);
+		color: #8D8D8D;
+	}
+}
+
+.features-item__img{
+	@extend .col-md-4;
+	@include x-rem(padding-top, 20px);
+}
+
+
+
+// Base
+
+// Note Edit Form
+.note-form__title{
+	@extend .form-control;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: none !important;
+	padding: 0;
+	@include x-rem(font-size, 16px);
+	color: #cacaca;
+	font-style: italic;
+
+	:hover, :active, :focus{
+		border: none !important;
+	}
+}
+
+.note-form__body{
+	@extend .form-control;
+}
+
+// Site Header
+.logo{
+	@extend .text-muted;
+	float: left;
+	font-style: italic;
+}
+
+// Button
+.button{
+	@extend .btn;
+	@extend .btn-lg;
+	@extend .btn-primary;
+}
+
+.editable{
+	p, a, h1, h2, h3{
+	font-family: "inconsolata";
+}
+}
+
+p{
+	@include x-rem(font-size, 18px);
+	@include x-rem(line-height, 26px);
+	@include x-rem(margin-bottom, 19.5px);
+}
+
+a{
+
+}
+
+h1{
+	@include x-rem(font-size, 36px);
+	@include x-rem(line-height, 39px);
+	@include x-rem(margin-bottom, 12px);
+	@include x-rem(margin-top, 0px);
+	font-weight: 700;
+	letter-spacing: -2px;
+}
+
+
+h2{
+	@include x-rem(font-size, 24px);
+	@include x-rem(line-height, 39px);
+	@include x-rem(margin-bottom, 12px);
+	@include x-rem(margin-top, 0px);
+	font-weight: 700;
+	letter-spacing: -0.5px;
+}
+
+h3{
+	@include x-rem(font-size, 18px);
+	@include x-rem(line-height, 24px);
+	@include x-rem(margin-bottom, 12px);
+	@include x-rem(margin-top, 0px);
+	font-weight: 700;
+}
+
+.mediumInsert {
+    position: relative;
+	margin: -0.5rem 0 -0.5rem -80px;
+	min-height: 1rem;
+}
+
+.mediumInsert .mediumInsert-buttons a {
+text-decoration: underline;
+cursor: pointer;
+color: #cacaca;
+}
+
+.document-list{
+	padding-top: 100px;
+}

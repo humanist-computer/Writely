@@ -1,0 +1,32 @@
+source 'https://rubygems.org'
+ruby "2.0.0"
+
+gem 'shotgun', :group=>:development
+gem 'rack-cache'
+
+gem 'sinatra', :require => 'sinatra/base'
+gem 'sinatra-support'
+gem "slim"
+
+gem 'sprockets'
+gem 'sprockets-helpers'
+gem 'sprockets-sass'
+
+gem 'compass'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+
+gem 'uglifier'
+
+gem 'execjs'
+gem 'therubyracer'
+
+gem 'tilt', '~> 1.4.1'
+gem "dm-core"
+gem "dm-migrations"
+gem "omniauth"
+gem "omniauth-twitter"
+gem "thin", "~> 1.6.2"
+gem "pg", :group => :production
+gem "dm-postgres-adapter", :group => :production
+gem "dm-sqlite-adapter", :group => :development
